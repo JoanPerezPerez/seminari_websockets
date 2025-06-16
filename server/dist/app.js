@@ -27,6 +27,9 @@ io.on("connection", (socket) => {
     socket.on("join_room", (roomId) => {
         socket.join(roomId);
         console.log(`User with ID: ${socket.id} joined room: ${roomId}`);
+        //afegim el missatge del client que s'ha unit a la sala
+        console.log(roomId.message);
+
     });
 });
 server.listen(3001, () => {
