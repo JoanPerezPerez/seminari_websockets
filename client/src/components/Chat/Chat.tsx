@@ -37,6 +37,10 @@ const Chat: React.FC = () => {
       setMessageList(prev => [...prev, data]);
     });
 
+    socketRef.current.on('user_joined', (data) => {
+      console.log(data.message); 
+      setMessageList(prev => [...prev, data]);
+    });
     socketRef.current.on('status', (data) => {
       console.debug('Estado recibido:', data);
       if (data.status === 'unauthorized') {

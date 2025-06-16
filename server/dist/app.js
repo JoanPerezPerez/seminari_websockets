@@ -31,7 +31,7 @@ io.on("connection", (socket) => {
     });
     socket.on("user_joined",(data)=>{
         //afegim el missatge del client que s'ha unit a la sala
-        console.log(roomId.message);
+        console.log(data.message);
     })
 });
 server.listen(3001, () => {
